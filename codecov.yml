@@ -1,2 +1,25 @@
+coverage:
+  status:
+    project:
+      default:
+        target: 50%
+      calculator:
+        target: 100%
+      smiles:
+        target: 75%
+    patch:
+      default:
+        target: 100%
+
+flags:
+  calculator:
+    paths:
+      - calculator/
+    carryforward: true
+  smiles:
+    paths:
+      - smiles/
+    carryforward: true
+
 ignore:
   - tests/*
