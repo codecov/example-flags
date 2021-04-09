@@ -2,28 +2,32 @@ coverage:
   status:
     project:
       default:
-        target: 50%
-      calculator:
-        target: 100%
-        flags:
-          - calculator
-      smiles:
-        target: 75%
-        flags:
-          - smiles
+        target: 83.33%
     patch:
       default:
-        target: 100%
+        target: 75%
 
-flags:
-  calculator:
-    paths:
-      - calculator/
+flag_management:
+  default_rules:
     carryforward: true
-  smiles:
-    paths:
-      - smiles/
-    carryforward: true
+    statuses:
+      - name_prefix: proj-
+        type: project
+        target: 75%
+        threshold: 1%
+      - name_prefix: patch-
+        type: patch
+        target: 75%
+  individual_flags:
+    - name: old_features
+      paths:
+        - smiles/
+        - calculator/
+      carryforward: true
+      statuses:
+        - name_prefix: proj-
+          type: project
+          target: 87.5%
 
 ignore:
   - tests/*
