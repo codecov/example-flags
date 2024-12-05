@@ -20,7 +20,7 @@ jobs:
       run: |
         coverage run -m pytest tests/test_calculator.py
         coverage xml
-    - uses: codecov/codecov-action@v1
+    - uses: codecov/codecov-action@v5
       with:
         flags: calculator
 
@@ -28,7 +28,7 @@ jobs:
       run: |
         coverage run -m pytest tests/test_smiles.py
         coverage xml
-    - uses: codecov/codecov-action@v1
+    - uses: codecov/codecov-action@v5
       with:
         flags: smiles
 
@@ -36,7 +36,7 @@ jobs:
       run: |
         coverage run -m pytest tests/test_auth.py
         coverage xml
-    - uses: codecov/codecov-action@v1
+    - uses: codecov/codecov-action@v5
       with:
         flags: auth
 
@@ -44,6 +44,6 @@ jobs:
       run: |
         coverage run -m pytest tests/test_calculator.py tests/test_smiles.py
         coverage xml
-    - uses: codecov/codecov-action@v1
+    - uses: codecov/codecov-action@v5
       with:
         flags: old-features
